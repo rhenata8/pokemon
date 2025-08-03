@@ -1,18 +1,14 @@
+// src/components/Navbar.jsx
 import { useContext } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { PokemonContext } from '../context/PokemonContext';
 
 export default function Navbar() {
   const { search, setSearch } = useContext(PokemonContext);
 
-  const navLinkStyles = ({ isActive }) => ({
-    fontWeight: isActive ? 'bold' : 'normal',
-    color: isActive ? '#0ea5e9' : '#475569', 
-  });
-
   return (
    
-    <header className="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-10">
+    <header className="bg-white/80 backdrop-blur-md">
       <nav className="container mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
         <div className="flex items-center gap-8">
           <Link to="/" className="text-2xl font-bold text-slate-800">
