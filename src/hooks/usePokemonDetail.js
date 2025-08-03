@@ -1,4 +1,3 @@
-// src/hooks/usePokemonDetail.js
 import { useState, useEffect } from 'react';
 
 export function usePokemonDetail(name) {
@@ -15,7 +14,7 @@ export function usePokemonDetail(name) {
         setError(null);
         const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
         if (!res.ok) {
-          throw new Error("Pokémon not found");
+          throw new Error("Pokémon tidak ditemukan");
         }
         const data = await res.json();
         setPokemon(data);
@@ -25,7 +24,7 @@ export function usePokemonDetail(name) {
         setLoading(false);
       }
     }
-    
+
     fetchDetail();
   }, [name]);
 
